@@ -1,4 +1,6 @@
-/* Reset margins and paddings */
+/* ===============================
+   Global Reset & Base
+================================== */
 * {
   margin: 0;
   padding: 0;
@@ -8,100 +10,104 @@
 body, html {
   height: 100%;
   width: 100%;
-  font-family: Arial, sans-serif;
-  font-size: 16px; /* base for rem calculations */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* base for rem scaling */
   overflow-x: hidden;
 }
 
-/* Video Section */
+/* ===============================
+   Hero / Video Section
+================================== */
 #video-section {
-  position: relative; /* container for overlaying content */
+  position: relative;
   width: 100%;
-  height: 100vh; /* full viewport height */
+  height: 100vh; /* full screen */
   overflow: hidden;
 }
 
-/* Video container fills the section */
 .video-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 0; /* remove rounded corners for hero */
-  overflow: hidden;
   z-index: 1;
 }
 
 .video-container iframe {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill hero area without distortion */
-  inset: 0;
+  object-fit: cover;
+  pointer-events: none;
 }
 
+/* Overlayed content */
 .hero-content {
-  position: absolute;     /* overlay on top of video */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  z-index: 5;              /* above the video */
-  pointer-events: none;    /* optional: allows clicks to pass through */
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  z-index: 5;
+ /* pointer-events: none; /* optional: clicks pass through */*/
 }
 
 .page-title {
   font-size: 3rem;
   color: #fff;
-  text-shadow: 0.125rem 0.125rem 0.4rem rgba(0,0,0,0.7);
   text-align: center;
-  pointer-events: auto; 6   /* allow interaction if needed */
-  position:relative;
+  text-shadow: 0.125rem 0.125rem 0.4rem rgba(0,0,0,0.7);
+  pointer-events: auto; /* allow interaction */
 }
 
-/* Navbar */
+/* ===============================
+   Navbar
+================================== */
 .navbar {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  display: flex;
-  align-items: center;
-  z-index: 4; /* above video and hero text */
+  z-index: 6;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 1.25rem;
+  z-index: 6;
 }
 
 .navbar a {
   font-size: 1.5rem;
   color: #fff;
   text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3rem 0.6rem;
-  border-radius: 0.3rem;
   transition: background 0.3s ease;
+  z-index: 6;
 }
 
 .navbar a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Burger menu */
+/* ===============================
+   Burger Menu
+================================== */
 .burger-menu {
   position: absolute;
   top: 1.25rem;
   left: 1.25rem;
-  z-index: 5; /* above everything */
+  z-index: 7;
 }
 
 #burger-button {
@@ -114,24 +120,21 @@ body, html {
   border-radius: 0.3rem;
 }
 
-/* Dropdown container */
 #burger-dropdown {
   list-style: none;
   position: absolute;
-  top: 3.5rem;  /* below the button */
+  top: 3.5rem;
   left: 0;
   background: rgba(0,0,0,0.8);
   border-radius: 0.3rem;
-  overflow: hidden;
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
-  z-index: 6; /* above burger button */
 }
 
-/* When active, expand dropdown */
 .burger-menu.active #burger-dropdown {
-  max-height: 500px; 
+  max-height: 400px;
   opacity: 1;
 }
 
@@ -155,264 +158,219 @@ body, html {
   background: rgba(255,255,255,0.2);
 }
 
-/* Section container */
+/* ===============================
+   Rose Collection (scrollable)
+================================== */
 .scroll-section {
-  height: 50vh; /* half viewport height */
   width: 100%;
-  background-color: #f4f4f4; /* light gray background for contrast */
+  background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  box-sizing: border-box;
 }
 
-
-/* Section title */
- #rose-title {
-  font-size: 2rem; /* like $2 */
+#rose-title {
+  font-size: 2rem;
   font-weight: bold;
+  margin: 2rem 0 1rem;
   text-align: center;
-  margin-bottom: 1rem;
-  disay:flex;
-  justify-items: center;
-  margin-top: 2rem;
+  dispaly: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Scrollable container */
 .scroll-container {
   display: flex;
-  gap: 1rem; /* padding between items */
-  overflow-x: auto; /* horizontal scroll */
+  gap: 1rem;
+  overflow-x: auto;
   scroll-behavior: smooth;
   width: 100%;
   padding: 1rem 0;
 }
 
 .scroll-container::-webkit-scrollbar {
-  display: none; /* optional: hide scrollbar */
+  display: none;
 }
 
-/* Individual menu items */
 .menu-item {
-  background-color: #fff;
-  flex: 0 0 auto; /* prevents shrinking */
-  width: 200px; /* fixed width for consistency */
+  background: #fff;
+  flex: 0 0 auto;
+  width: 200px;
   border-radius: 8px;
   text-align: center;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Image styling */
 .menu-item img {
   width: 100%;
-  height: auto;
-  margin-bottom: 0.5rem;
   border-radius: 6px;
+  margin-bottom: 0.5rem;
 }
 
-/* Description text */
-.menu-item h1 {
-  font-size: 1.2rem; /* like $1 */
-  font-weight: normal;
-  margin-bottom: 0.25rem;
-}
-
-/* Price text */
-.menu-item p {
-  font-size: 1rem; /* like $1 */
-  font-weight: normal;
-  color: #444;
-  margin: 0;
-}
-
-/* Escape Collection Section */
+/* ===============================
+   Escape Collection
+================================== */
 #escape-collection {
-  position: relative;        /* allows overlay positioning */
-  height: 60vh;              /* adjust height as needed */
-  margin: 2rem 0;            /* 2rem above and below */
-  overflow: hidden;          /* ensures image doesn’t spill */
+  position: relative;
+  height: 60vh;
+  margin: 2rem 0;
+  overflow: hidden;
 }
 
-/* Make image fill the section */
 #escape-collection .background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* ensures image covers entire section */
-  display: block;
+  object-fit: cover;
 }
 
-/* Overlay text container */
 #escape-collection .image-overlay {
   position: absolute;
-  bottom: 2rem;              /* place text near bottom */
+  bottom: 2rem;
   left: 50%;
-  transform: translateX(-50%); /* center horizontally */
+  transform: translateX(-50%);
   text-align: center;
-  padding: 1rem;             /* optional padding around text */
-  color: white;              /* white text */
+  color: white;
 }
 
-/* Title styling */
 #escape-collection h2 {
   font-size: 2rem;
   font-weight: bold;
-  margin: 0.5rem 0;
-  text-transform: none;      /* normal casing */
 }
 
-/* Subtitle/description styling */
 #escape-collection p {
   font-size: 1.2rem;
-  margin: 0;
 }
 
-/* Style Collection Section */
+/* ===============================
+   Style Collection
+================================== */
 #style-collection {
-  display: flex;                     /* side-by-side cards */
-  justify-content: space-between;    /* space between cards */
-  width: 100%;                       /* full width of section */
-  height: 50vh;                      /* 50% viewport height */
-  padding: 0 1rem;                   /* smaller space on left and right edges */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50vh;
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 
-/* Each card */
 #style-collection .image-item {
-  position: relative;                /* for overlay text */
-  flex: 1.1;                         /* slightly wider cards */
-  height: 100%;                      /* fill section height */
-  margin: 0 0.5rem;                  /* smaller gaps between cards */
-  overflow: hidden;                  /* hide overflow from image */
-  border-radius: 8px;                /* optional: rounded corners */
+  position: relative;
+  flex: 1.1;
+  height: 100%;
+  margin: 0 0.5rem;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-/* Image fills card */
 #style-collection .collection-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;                 /* cover the card fully */
-  display: block;
+  object-fit: cover;
 }
 
-/* Overlay text (centered) */
 #style-collection .image-overlay {
   position: absolute;
-  top: 50%;                          /* center vertically */
-  left: 50%;                         /* center horizontally */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   color: white;
-  font-family: 'Inter', sans-serif;  /* same font as before */
-  padding: 0 0.5rem;                 /* small padding to prevent text touching edges */
+  text-align: center;
 }
 
-/* Title text */
 #style-collection h3 {
   margin: 0;
-  font-size: 1.6rem;                 /* reduced font size */
+  font-size: 1.6rem;
   font-weight: 600;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);  /* optional for readability */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Archive Section */
+/* ===============================
+   Archive Section
+================================== */
 #archive-section {
-  position: relative;               /* allow overlay positioning */
-  width: 100vw;                     /* full viewport width */
-  height: 50vh;                     /* half viewport height */
-  margin: 2rem 0;                   /* space above and below */
-  overflow: hidden;                 /* hide overflow from image */
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  margin: 2rem 0;
+  overflow: hidden;
 }
 
-/* Make image fill the section */
 #archive-section .background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;                /* image covers section */
-  display: block;
+  object-fit: cover;
 }
 
-/* Overlay container for text */
 #archive-section .image-overlay {
   position: absolute;
-  top: 50%;                         /* center vertically */
-  left: 50%;                        /* center horizontally */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;                     /* consistent white text */
-  font-family: 'Inter', sans-serif; /* consistent font */
-  line-height: 1.5;                 /* spacing between lines */
-}
-
-/* First and third lines */
-#archive-section .image-overlay p:not(#archive-bold) {
-  font-size: 1rem;                  /* smaller lines */
-  font-weight: normal;
-  margin: 0.25rem 0;
-}
-
-/* Second line — the bold one */
-#archive-section #archive-bold {
-  font-size: 2rem;                  /* larger text */
-  font-weight: bold;
-  margin: 0.25rem 0;
   color: white;
+  line-height: 1.5;
 }
 
-/* Footer Section */
+#archive-section .image-overlay p:not(#archive-bold) {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+#archive-section #archive-bold {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ===============================
+   Footer
+================================== */
 #site-footer {
-  background-color: #f8f8f8;       /* light background */
-  padding: 2rem 1rem;              /* padding around the footer */
-  width: 100%;
-  box-sizing: border-box;
+  background: #f8f8f8;
+  padding: 2rem 1rem;
 }
 
-/* Container for all columns */
 .footer-container {
-  display: flex;                    /* arrange columns horizontally */
-  justify-content: space-between;   /* space evenly between columns */
-  max-width: 1200px;                /* optional: constrain width */
-  margin: 0 auto;                   /* center container horizontally */
-  gap: 1rem;                        /* optional spacing between columns */
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
-/* Each footer column */
 .footer-column {
   display: flex;
-  flex-direction: column;           /* arrange content vertically */
-  align-items: center;              /* center content under heading */
-  flex: 1;                          /* evenly divide space among columns */
-  padding: 0 1rem;                  /* space so it doesn't touch edges */
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 1rem;
 }
 
-/* Column headings */
 .footer-column h4 {
-  font-size: 1.25rem;               /* like H3M */
+  font-size: 1.25rem;
   font-weight: bold;
   color: black;
   margin-bottom: 1rem;
 }
 
-/* Column links */
 .footer-column ul {
-  list-style: none;                 /* remove bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
   text-align: center;
 }
 
 .footer-column ul li {
-  margin-bottom: 0.5rem;            /* spacing between items */
+  margin-bottom: 0.5rem;
 }
 
 .footer-column ul li a {
   text-decoration: none;
-  color: black;                     /* black text for links */
-  font-weight: normal;
+  color: black;
   font-size: 1rem;
 }
 
 .footer-column ul li a:hover {
-  text-decoration: underline;       /* optional hover effect */
+  text-decoration: underline;
 }
