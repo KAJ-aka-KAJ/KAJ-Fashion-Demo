@@ -1,123 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lumos Frontend Solutions</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="KAJ Fashion — stylish, responsive landing pages and front-end solutions." />
+  <title>KAJ Fashion</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <!-- ===== HEADER / NAV ===== -->
-  <header>
-    <nav id="navbar">
-      <div class="logo">Lumos Frontend Solutions</div>
-      <button id="menu-toggle" class="menu-btn">☰</button>
-      <ul class="nav-links">
+
+<!-- Hero Section -->
+<section id="video-section">
+  <!-- Background video -->
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/1sZ7SjKHNrU?autoplay=1&mute=1&loop=1&playlist=1sZ7SjKHNrU"
+      title="YouTube Shorts Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Overlay content -->
+  <div class="hero-content">
+
+    <!-- Burger Menu (Top Left) -->
+    <div class="burger-menu">
+      <button id="burger-button">☰</button>
+      <ul id="burger-dropdown">
         <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-      <!--  <li><a href="#certifications">Certifications</a></li>-->
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#rose-title">About</a></li>
+        <li><a href="#rose-collection">Services</a></li>
+        <li><a href="#site-footer">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Page Title (Center) -->
+    <h1 class="page-title">Welcome to KAJ Fashion</h1>
+
+    <!-- Navbar (Top Right) -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#hero" title="Home"><i data-lucide="home"></i></a></li>
+        <li><a href="#rose-collection" title="Collections"><i data-lucide="shopping-bag"></i></a></li>
+        <li><a href="#rose-title" title="About"><i data-lucide="info"></i></a></li>
+        <li><a href="#site-footer" title="Contact"><i data-lucide="mail"></i></a></li>
       </ul>
     </nav>
-  </header>
-
-  <!-- ===== HERO SECTION ===== -->
-  <section id="hero" class="container hero">
-    <div class="hero-text">
-      <h1>Welcome to Lumos Frontend Solutions</h1>
-      <p>We craft modern, responsive, and high-performing websites that help brands stand out and grow. From elegant landing pages to complete frontend solutions, we bring your vision to life with precision and creativity.</p>
-      <a href="#projects" class="btn">See Our Work</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://blindspotadvisors-89c1.kxcdn.com/wp-content/uploads/2017/10/code-1.jpg" alt="Profile Picture">
-    </div>
-  </section>
-
-  <!-- ===== ABOUT SECTION ===== -->
-  <section id="about" class="container about">
-    <h2>About Us</h2>
-    <p>
-      At Lumos Frontend Solutions, we believe that your website is more than just a digital presence — it’s the first impression of your brand.  
-      Our mission is simple: build user-friendly, visually stunning, and mobile-ready sites that convert visitors into loyal customers.  
-      Whether you need a landing page, a full business site, or a tailored digital experience, we handle design, responsiveness, and performance so you can focus on growth.
-    </p>
-  </section>
-
-<!-- ===== PROJECTS SECTION ===== -->
-<section id="projects" class="container projects">
-  <h2>Our Projects</h2>
-  <div class="projects-grid">
-
-  <!--  <div class="card">
-      <img src="images/lumina-glow.jpg" alt="Lumina Glow Skincare Project" class="project-img">
-      <h3>Lumina Glow Skincare</h3>
-      <p>
-        A sleek and elegant landing page for a skincare brand, designed to highlight products with a clean aesthetic and easy navigation.  
-        Built to boost customer trust and drive sales through beauty-focused design.
-      </p>
-      <a href="https://kaj-aka-kaj.github.io/Lumina-Glow-Skincare-/" class="btn" target="_blank">View Project</a> 
-    </div> -->
-
-    <div class="card">
-      <img src="https://i.postimg.cc/7ZMKndKP/Screenshot-20250901-123612-2.jpg" alt="SmartEstate Landing Page Project" class="project-img">
-      <h3>SmartEstate Landing Page</h3>
-      <p>
-        A real estate platform landing page built with HTML, CSS, and JavaScript.  
-        Designed with professionalism and clarity to attract property buyers, sellers, and investors while ensuring smooth user interaction.
-      </p>
-      <a href="https://kaj-aka-kaj.github.io/Smart-Estate-/" class="btn" target="_blank">View Project</a>
-    </div>
-
-    <div class="card">
-      <img src="https://i.postimg.cc/WpCYNMDV/Screenshot-20250901-123538-2.jpg" alt="Taste Haven Restaurant Project" class="project-img">
-      <h3>Taste Haven Restaurant</h3>
-      <p>
-        A modern restaurant landing page with bold visuals, smooth layout, and inviting design.  
-        Created to showcase menu items, engage customers, and encourage online reservations seamlessly.
-      </p>
-      <a href="https://kaj-aka-kaj.github.io/Taste-Haven--Restaurant-Landing-Page-/" class="btn" target="_blank">View Project</a>
-    </div>
-    <div class="card">
-  <img src="https://i.postimg.cc/ZKBQzhWW/Screenshot-20250913-123206-2.jpg" alt="KAJ Fashion Project" class="project-img">
-  <h3>KAJ Fashion</h3>
-  <p>
-    A sleek and stylish fashion demo website highlighting modern collections with clean design, 
-    immersive visuals, and a user-friendly browsing experience.  
-    Built to showcase fashion items with elegance and simplicity.
-  </p>
-  <a href="https://kaj-aka-kaj.github.io/KAJ-Fashion-Demo/" class="btn" target="_blank">View Project</a>
-</div>
-    
-    
 
   </div>
 </section>
 
-  <!-- ===== CERTIFICATIONS SECTION ===== 
-  <section id="certifications" class="container certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Responsive Web Design – FreeCodeCamp</li>
-      <li>Blockchain Basics – Updraft</li>
-    </ul>
-  </section> -->
+<!-- Rose Collection Section -->
+<section id="rose-collection" class="scroll-section">
+    <div>  <h2 id="rose-title">Rose Collection</h2>
+    <p>Choose One To Get Started</p>
+    </div>
 
-<!-- ===== CONTACT SECTION ===== -->
-<section id="contact" class="container contact">
-  <h2>Work With Us</h2>
-  <p>Ready to build a website that sets your brand apart? Reach out and let’s make it happen.</p>
-  <ul class="contact-info">
-    <li><strong>Email:</strong> <a href="mailto:ajk092021@outlook.com">ajk092021@outlook.com</a></li>
-    <li><strong>Telegram:</strong> <a href="https://t.me/ajkenny1443" target="_blank">@ajkenny1443</a></li>
-  </ul>
+  <div class="scroll-container">
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/0556793/1.jpg?4932" alt="Shirt" />
+        <p>Shirts</p>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/5632404/1.jpg?3037" alt="Shorts" />
+        <p>Shorts</p>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/87/0152093/1.jpg?3011" alt="Jacket" />
+        <p>Jackets</p>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/49/9094652/1.jpg?1869" alt="Jeans" />
+        <p>Jeans</p>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/88/6484404/1.jpg?8268" alt="Shoes" />
+        <p>Shoes</p>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/79/1965814/1.jpg?9043" alt="Hat" />
+        <p>Hats</p>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="menu-item">
+        <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/15/1490293/1.jpg?3006" alt="Accessories" />
+        <p>Accessories</p>
+      </div>
+    </a>
+
+  </div>
 </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>&copy; 2025 Lumos Frontend Solutions. All rights reserved.</p>
-  </footer>
+<!-- Escape Collection Section -->
+<section id="escape-collection" class="image-section">
+  <img src="https://www.mrporter.com/content/images/cms/ycm/resource/blob/25324568/5d851a7453cf36fbc312ef2df83ae0d4/the-journal-duo-header-5x4-mobile-app-21-jpg-data.jpg/w800_q80.jpg" alt="Escape Collection Background" class="background-image" />
+  <div class="image-overlay">
+    <h2>Escape Collection</h2>
+    <p>designed for long days, rough flights, and late nights.</p>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- Style Collection Section -->
+<section id="style-collection" class="multi-image-section">
+<a href="#">  <div class="image-item">
+    <img src="https://www.mrporter.com/content/images/cms/ycm/resource/blob/25325968/bb6dceeec6fe42e200035ca4c04073dd/image-data.jpg/w800_q80.jpg" alt="Tops" class="collection-image" />
+    <div class="image-overlay"><h3>Tops</h3>
+    <p>Click here</p>
+    </div>
+  </div>
+  </a>
+
+<a href="#">  <div class="image-item">
+    <img src="https://www.mrporter.com/content/images/cms/ycm/resource/blob/25325962/6c91f3bdb021d2d7637f16223313324d/image-data.jpg/w800_q80.jpg" alt="Bottoms" class="collection-image" />
+    <div class="image-overlay"><h3>Bottoms</h3>
+    <p>Click Here</p>
+    </div>
+  </div></a>
+
+<a href="#">  <div class="image-item">
+    <img src="https://www.mrporter.com/content/images/cms/ycm/resource/blob/25325992/5f7185edd1a43613c78fca951fd6213b/image-data.jpg/w800_q80.jpg" alt="Accessories" class="collection-image" />
+    <div class="image-overlay"><h3>Accessories</h3>
+    <p>Click Here</p>
+    </div>
+  </div>
+</section></a>
+
+<!-- Archive Section -->
+<section id="archive-section" class="full-image-section">
+  <img src="https://www.mrporter.com/content/images/cms/ycm/resource/blob/25324582/7688266d4e4eb7e50c9ff29b45200925/the-journal-trio-header-169-64-jpg-1--data.jpg/w800_q80.jpg" alt="Archive Background" class="background-image" />
+  <div class="image-overlay">
+    <p>up to 70%</p>
+    <p id="archive-bold">the archive</p>
+    <p>explore our archive now</p>
+    <p>discover more inside</p>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer id="site-footer" class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h4>Concierge</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Customer Support</a></li>
+        <li><a href="#">Start a Return</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Story</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Social</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  const burgerMenu = document.querySelector('.burger-menu');
+  const burgerButton = document.getElementById('burger-button');
+
+  burgerButton.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+  });
+
+  lucide.createIcons();
+</script>
+<script src="script.js"></script>
 </body>
 </html>
